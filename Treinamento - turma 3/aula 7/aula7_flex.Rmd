@@ -1,0 +1,76 @@
+---
+title: "Primeiro Flexdahsboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    #vertical_layout: fill
+    social: menu
+    source_code: embed
+    theme: lumen
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+# Imagem
+### Imagem
+<img src="imagens/rosa deserto.jpg" width = "300" height = "250">
+
+Sei la como faz isso era um exemplo de titulo mesmo
+
+### conteudo aleaório para teste
+
+```{r}
+summary(iris)
+
+```
+
+# Gráfico
+
+```{r}
+library(ggplot2)
+library(plotly)
+library(gapminder)
+library(stats)
+
+gap4 <- aggregate(lifeExp ~ continent + year, 
+                  data =gapminder, 
+                  FUN = mean)
+
+
+linha2 <- ggplot(gap4, aes(year,lifeExp, 
+                          color = continent ))+
+  geom_line()+ 
+  geom_point(aes(shape=continent))+
+  labs(title = "Evolução da expectativa de vida por continente",
+       x = "Ano",
+       y = "anos de vida",
+       color = "Continente")
+
+ggplotly(linha2)
+
+```
+
+
+# Tabelas 
+Esses são os data frames feitos durante as aulas 
+
+column{.tabset}
+---------------------
+### Df curso
+```{r}
+dfCurso <- data.frame("nome"=c("Joana", "Maria", "João", "Pedro", "José"),
+                      "idade"= c(21,25,28,34,18),
+                      "curso"= c("Engenharia","Engenharia","Direito",
+                                 "Enfermagem","Engenharia"))
+
+dfCurso %>% DT::datatable() 
+
+```
+### Base iris
+```{r}
+data("iris")
+iris %>% DT::datatable()
+
+```

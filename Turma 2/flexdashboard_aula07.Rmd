@@ -1,0 +1,83 @@
+---
+title: "Meu Primeiro Flesdashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    #vertical_layout: fill
+    social: menu
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+menu_principal
+-----------------------------------------------------------------------
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+# Data frame exemplo
+
+Aqui é o texto sobre o data frame exemplo dos curso, não esqueça que no flex não precisa dar apelido para a sessão de codigo
+
+```{r}
+ df_exemplo <- data.frame("nome" = c("Joana", "Maria", "João", "Pedro",                                       "José"),
+                          "idade" = c(21,25,28,34,18),
+                         "Faculdade" = c("Engenharia", "Engenharia",                                             "Direito",
+                                         "Enfermagem","Engenharia"))
+# para dar um print coloque o nome da variavel
+df_exemplo
+```
+----------------------------------------------------------------------
+Column {data-width=650}
+------------------------------------------------------------------------
+# Colocar o filtro 
+
+```{r}
+library(dplyr)
+
+resultado <- df_exemplo %>% filter(Faculdade == "Enfermagem") 
+
+resultado
+```
+
+
+menu_secundario
+-----------------------------------------------------------------------
+# Figuras e gráficos
+
+![flor](https://imagens-revista.vivadecora.com.br/uploads/2018/09/Flor-de-l%C3%B3tus-cor-de-rosa.jpg)
+
+Duas figuras da internet e o plot do grafico
+
+# Figura editada
+
+## figura 
+![Logo do R](http://developer.r-project.org/Logo/Rlogo-5.png)
+
+
+## texto
+
+Posso até colocoar um texto antes ou depois da figura sem problema algum
+**negrito**
+__negrito2__
+
+*italico*
+_italico_
+
+[ink externo](https://www.google.com.br)
+
+## figura 2
+
+```{r, echo=FALSE, fig.cap="Bleach", out.width = '50%'}
+knitr::include_graphics("https://imagens-revista.vivadecora.com.br/uploads/2018/09/Flor-de-l%C3%B3tus-cor-de-rosa.jpg")
+
+#bleach.jpg"
+
+```
+
+# Grafico
+```{r}
+plot(pressure)
+```
+

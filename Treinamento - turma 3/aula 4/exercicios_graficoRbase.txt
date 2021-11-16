@@ -1,0 +1,6 @@
+Faça um histograma e um boxplot para a base de dados mtcars
+
+ Faça o grafico de dispersão utilizando a base iris você pode escolher 
+os valores de x e y entre as 1,2 coluna ou 3 e 4 coluna 
+
+

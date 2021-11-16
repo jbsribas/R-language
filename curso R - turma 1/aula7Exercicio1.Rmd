@@ -1,0 +1,48 @@
+---
+title: "ExercicioAula7"
+author: "Jessica"
+date: "12/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Esse documento tem como objetico exaltar a beleza dos olhos de uma pequena amostra da Familia Lalalalal, Como pode se saber esses dados são armazenaso em um data frame e serão organizados e apresentado graficamente.
+
+```{r olhos, echo = FALSE}
+Nome <- c("Joana", "Francisco", "Paulo", "Márcia", "Joaquina", "Bruno")
+Idade <- c(21,30,27,29,40, 27)
+Cor_dos_olhos <- c("Preto", "Castanho", "Azul", "Azul", "Preto", "Castanho")
+
+dfolho <- data.frame(Nome, Idade, Cor_dos_olhos )
+head(dfolho)
+```
+
+## Including Plots
+
+Agora iremos usar o pacote dplyr e filtrar as coisas
+
+```{r filtro, echo=FALSE}
+library(dplyr)
+
+dfolho %>% filter(Cor_dos_olhos == "Azul")
+
+
+```
+
+
+Agora vou fazer o gráfico dos olhos 
+
+
+```{r grafico, echo=FALSE}
+
+olho <- table(dfolho$Cor_dos_olhos)
+barplot(olho, main = " Olhos", xlab = " Cor", ylab = "quantidade",
+        col = c("pink", "light blue","light green"), horiz = TRUE)
+
+
+```

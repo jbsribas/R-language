@@ -1,0 +1,50 @@
+---
+title: "Olhos"
+author: "Jessica"
+date: "`r format(Sys.Date(), '%d/%B/%Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+## Data frame olhos
+
+Este arquivo é do exercício da _aula 07_ sobre a utilização do data frame olhos da **aula 02** para a pesquisa e criação de gráficos por aqui.
+
+```{r olhos}
+dfOlhos <- data.frame("nome" = c("Joana","Francisco",                "Paulo","Márcia",                    "Joaquina","Bruno"),
+"idade" = c(21,30,27,29,40,27),
+"cor_dos_olhos" = c("Preto",          "Castanho",                       "Azul",                              "Azul",                               "Preto",                             "Castanho"))
+
+########################################
+print(dfOlhos)
+```
+
+## Fazendo o filtro
+
+utilizando a biblioteca dplyr para fazer o filtro somente das pessoas com os castanhos
+
+```{r filtro}
+library(dplyr)
+
+dfOlhos %>% filter(cor_dos_olhos == "Castanho")
+```
+
+## Gráfico de barras
+
+O grafico de barras da aula 04.
+
+```{r grafico}
+#graficos de barras
+
+contOlho <- table(dfOlhos$cor_dos_olhos)
+
+barplot(contOlho, 
+        main = "Cor Olhos",
+        col = c("blue", "yellow", "green"),
+        xlab = " cor dos olhos", 
+        ylab= " Qtde")
+```
+

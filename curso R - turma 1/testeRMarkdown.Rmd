@@ -1,0 +1,48 @@
+---
+title: "Natal 2020"
+author: 'Jessica Ribas '
+date: "19/12/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Contando da minha vida para vocês
+
+Esse ano o **Google** está mais animado com as festas de fim de ano que eu!!!
+
+Desde o dia 01/12/20 já colocou os doodles de fim de ano e eu nem se quer lembrava que já era dezembro, *nem do meu aniversário estava lembrabando*!!!
+
+
+![Caption for the picture.](C/Users/jessi/Documents/Impacta Treinamentos/curso R - turma 1/doodle.png)
+ 
+ 
+ E o logo do R que funcionou pegando direto da internet sem precisar salvar no computador!!!!
+ 
+ 
+![Logo do R](http://developer.r-project.org/Logo/Rlogo-5.png)
+
+
+## trabalhando com a base de dados iris
+
+sei que tá um porre ver esses mesmos dados toda hora, eu também achava isso quando estava aprendendo, mas agora gosto tando que não consigo evitar usar ela!!!
+
+```{r iris, echo=FALSE}
+summary(iris)
+```
+
+## Gráfico sobre a base de dados Iris
+
+
+esse gráfico foi feito de qualquer jeito, porque eu estou com preguiça de pensar em como fazer graficos bonitos hoje, porém quem quiser pode fazer um grafico bem feito usando a Rbase ou o ggplot2!!!!!
+
+
+```{r iris plot, echo=FALSE}
+plot(iris)
+```
+
+

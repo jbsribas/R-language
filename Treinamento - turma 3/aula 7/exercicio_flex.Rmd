@@ -1,0 +1,100 @@
+---
+title: "Exercicio"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    #vertical_layout: fill
+    social: menu
+    source_code: embed
+    theme: united
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+# DfOlhos
+
+Column {.tabset}
+-----------------------------------------------------------------------
+
+### Todos
+
+```{r}
+library(dplyr)
+dfOlhos <- data.frame("nome" = c("Joana","Francisco",
+                                 "Paulo","Márcia",
+                                 "Joaquina","Bruno"),
+                      "idade" = c(21,30,27,29,40,27),
+                      "cor_dos_olhos" = c("Preto",
+                                          "Castanho",
+                                          "Azul",
+                                          "Azul",
+                                          "Preto","Castanho"))
+
+dfOlhos %>% DT::datatable()
+##############################
+```
+### Pretos
+
+```{r}
+
+
+dfOlhos %>% filter(cor_dos_olhos == "Preto") %>% DT::datatable()
+
+```
+
+### Azuis
+
+```{r}
+dfOlhos %>% filter(cor_dos_olhos == "Azul") %>% DT::datatable()
+```
+
+### Castanhos
+
+```{r}
+dfOlhos %>% filter(cor_dos_olhos == "Castanho") %>% DT::datatable()
+```
+
+# Gráficos
+
+Column {data-width=450}
+-------------------------------------
+### Barras Vertical
+
+```{r}
+#graficos de barras
+
+contOlho <- table(dfOlhos$cor_dos_olhos)
+
+barplot(contOlho, 
+        main = "Cor Olhos",
+        col = c("light blue", "pink", "light green"),
+        xlab = " cor dos olhos", 
+        ylab= " Qtde")
+```
+
+### Barras Horizontal
+
+```{r}
+barplot(contOlho, 
+        main = "Cor Olhos",
+        col = c("light green", "light gray", "coral"),
+        xlab = " cor dos olhos", 
+        ylab= " Qtde",
+        horiz = TRUE)
+```
+
+### Pizza
+
+```{r}
+#grafico de pizza
+
+perc <- round(contOlho/sum(contOlho)*100,2)
+nome <- levels(as.factor(dfOlhos$cor_dos_olhos))
+rotulo <- paste(nome,perc,"%", sep = " ")
+
+pie(contOlho,
+    main = "Cor dos olhos",
+    col = c("red", "blue", "green"),
+    labels = rotulo)
+```

@@ -1,0 +1,11 @@
+faça uma função que calcule a area do quadrado
+a = lado* lado ou lado**2
+
+faça uma função para calcular a area do triagulo
+area = base*h /2
+
+faça uma função para calcular a area do retangulo
+area = base*altura
+
+faça uma função para calcular a area do cirulo
+area = pi * raio**2

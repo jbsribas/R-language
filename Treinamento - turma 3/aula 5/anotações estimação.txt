@@ -1,0 +1,15 @@
+y_estimado = a + b+ Residuo
+
+
+p-value
+p valor
+valor de p
+
+Normalmente p valor for menor igual que 0,05, ou seja 5%  então nós rejeitamos a nula hipotese 0, pois indica que com o conjunto de dados atual é possivel 
+responder o problema/ questão.
+
+quando maior 0,05 aceitamos a nula pois indica que o conjunto de dados atual não responde o problema/questão.
+
+
+
+

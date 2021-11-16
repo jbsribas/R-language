@@ -1,0 +1,19 @@
+# script que calcula o imc da pessoa e diz a faixa de peso
+altura
+peso
+
+imc = peso/altura**2
+
+tabela 
+menor 18,5 magreza
+entre 18,5 e 24,9 normal 18.5 > imc e imc < 24.9
+entre 25,0 e 29,9 sobrepeso
+entre 30,0 e 39,9 obesidade
+maior que 40 obesidade grave
+
+-----------------------------------------------------------------
+# recebe 4 notas e calcula a média final do aluno
+#menor que 6 reprovado
+#media de 6 a 8 aprovado
+#media de 8 a 9 aprovado com merito
+#media de 9 a 10 aprovado com merito e louvour

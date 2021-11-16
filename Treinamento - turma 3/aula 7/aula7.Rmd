@@ -1,0 +1,130 @@
+---
+title: "Meu Primeiro Relatorio"
+author: "Jessica"
+date: "`r format(Sys.Date(), '%d/%B/%Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Flores bonitas
+
+Na minha casa eu sou a louca das plantas, apesar de matar todas elas afogadas ou de cede.
+Amo flores também por exemplo:
+
+![Campo Girassol](https://www.significados.com.br/foto/girassol.jpg)
+
+[//]: <> (isso é um comentario )
+[comment]:<>(não vai ser incluido)
+
+<center>
+<img src="https://www.revistaprosaversoearte.com/content/uploads/2019/04/Flor-de-L%C3%B3tus-II-696x481.jpg" 
+width = "200"  heigth = "200"
+alt = "Flor de lotus">
+</center>
+
+imagem local
+
+![Flor](imagens/rosa deserto.jpg)
+
+<img src="imagens/marido_prof.jpg" width="200" height="200">
+
+*italico*  _italico_
+
+**Negrito** __Negrito__
+
+As **flores de lotús** são plantas aquaticas, logo essas eu não mataria afogada, mas de cede *kkkk*
+
+## Exemplos úteis 
+lista não numerada:
+
+- item que deseja colocar
+- item 2 que deseja colocar
+- item 3 que deseja colcoar
+
+lista numerada:
+
+1. item que deseja colocar
+2. item que deseja colocar
+3. item que deseja colocar
+
+lista e sublista:
+
+1. topico um
+    - lista não numerada
+    - lista não numerada
+2. topico 2
+    1. lista numerada
+    2. uhuuuu
+
+Gerando tabelas dentro do relatório
+
+    Caracter | Permissão
+    ---------|----------
+    `r`      | Permissão de leitura (*read*)
+    `w`      | Permissão de escrita (*write*)
+    `x`      | Permissão de execução (*execute*)
+    `-`      | Permissão desabilitada
+    
+Os simbolos matematicos das equações são os mesmos do Latex [clique aqui] (https://www.ime.usp.br/~rfarias/simbolos.html), para utiliza-los devemos usar o simbolo $
+A letra alpha é $\alpha$
+O somátorio $\sum$
+
+$y = a^2 + b + \varepsilon$
+
+co~2~
+
+# Trabalhanco com códigos R
+
+```{r cars, echo=FALSE}
+summary(cars)
+```
+```{r curso, warning=FALSE, message=FALSE}
+library(dplyr)
+dfCurso <- data.frame("nome"=c("Joana", "Maria", "João", "Pedro", "José"),
+                      "idade"= c(21,25,28,34,18),
+                      "curso"= c("Engenharia","Engenharia","Direito",
+                                 "Enfermagem","Engenharia"))
+
+dfCurso %>% 
+  filter(curso=="Engenharia") %>%
+  DT::datatable()
+```
+
+
+## Incluir plot de graficos
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+um grafico de histograma com dados feitos a partir dos dados gerados e passados pela função de normalização
+
+```{r normalizar}
+x <- rnorm(n = 31, mean = 1, sd = 1)
+hist(x, main = "Normalizado")
+```
+
+Um grafico do ggplot2
+
+```{r grafico2, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(gapminder)
+data("gapminder")
+gapmax <- subset(gapminder, year == max(year))
+ggplot(gapmax, 
+        aes(gdpPercap,lifeExp ,
+           color = continent,
+           shape = continent))+
+  geom_point()+
+  scale_x_log10()+
+  scale_color_discrete("Continente")+
+  scale_shape_discrete("Continente")+
+  labs(title = "Relação entre renda per capita e expctativa de vida",
+       x = "renda per capita (log10)",
+       y = "expectariva de vida")
+
+
+```

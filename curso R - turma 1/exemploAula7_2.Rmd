@@ -1,0 +1,59 @@
+---
+title: "MeuPrimeiroFlex"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    #vertical_layout: fill
+    social: menu
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+
+# Olhos
+
+Lista de olhos da familia **laalalallalala**
+
+```{r , echo=FALSE}
+
+dfolhos <- data.frame( "Nome" = c("Joana", "Francisco", "Paulo", "Márcia", "Joaquina", "Bruno"),
+                       "Idade" = c(21,30,27,29,40,27),
+                       "Cor dos Olhos" =  c("Preto","Castanho","Azul","Azul","Preto","Castanho"))
+
+
+olho <- table(dfolhos$Cor.dos.Olhos)
+fator <- as.factor(dfolhos$Cor.dos.Olhos)
+
+porcentagem <- round(olho/sum(olho)*100,2)
+rotulo <- paste(levels(fator), "(",porcentagem, "%",")", ssep = "")
+
+pie(porcentagem, labels = rotulo, 
+    main =  "Olhos", col= c("pink", "light blue","light green"))
+```
+
+# outro Gráfico
+
+**Caro Coleguinha** sei q que não aguenta mais esse data frame, juror que eststa é a uultima vez!!!!!
+
+```{r, echo=FALSE}
+olho <- table(dfolhos$Cor.dos.Olhos)
+
+barplot(olho, main = " Olhos", xlab = " Cor", ylab = "quantidade",
+        col = c("pink", "light blue","light green" ))
+        
+        
+```
+&nbsp;
+
+# Imagem  
+
+
+```{r}
+
+```
+ Gostei da im m do Google
+
+![Caption for the picture.](C:/Users/jessi/Documents/curso R/doodle.png)

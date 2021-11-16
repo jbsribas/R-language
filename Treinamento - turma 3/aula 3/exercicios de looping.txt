@@ -1,0 +1,17 @@
+vetor contendo o nome dos amigos 
+você vai percorer esse vetor e exibindo o nome dos amigos um por vez
+utilizando 
+for, while e repeat
+
+
+Utilizar o data frame olhos e no campo idade você vai calcular a media de idade de todos os cadastrados
+
+Utilizando o data frame olhos você vai percorrer o campo cor dos olhos e exibir somente
+o indice que contenha o valor azul
+
+Utilizando o data frame familia, você vai percorrer o parentesco e quando encontrar o valor pai ira mostrar o nome e escrever parabéns pelo seu dia ou feliz aniversario
+
+
+
+
+

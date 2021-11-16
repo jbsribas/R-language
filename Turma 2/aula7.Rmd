@@ -1,0 +1,54 @@
+---
+title: "Primeiro relatório dinâmico"
+author: "Jessica"
+date: "28/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Criando um data frame
+
+Nesta seção será importado e utilizado o data frame df_exemplo na aula 02. Ele contém um conjunto de dados sobre os alunos, seus cursos e idade.
+
+```{r dataFrame}
+df_exemplo <- data.frame("nome" = c("Joana", "Maria", "João", "Pedro",                                       "José"),
+                          "idade" = c(21,25,28,34,18),
+                         "Faculdade" = c("Engenharia", "Engenharia",                                             "Direito",
+                                         "Enfermagem","Engenharia"))
+# para dar um print coloque o nome da variavel
+df_exemplo
+```
+
+```{r dplyr}
+library(dplyr)
+
+resultado <- df_exemplo %>% filter(Faculdade == "Direito") 
+
+resultado
+
+```
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## incluindo figuras
+
+Agora vamos colocar algumas figuras nos relatórios uma delas vai ser direto da web, podendo ser qualquer coisa, mas para facilitar minha vida vou pegar o logo do R
+* para importar uma figura primeiro deve colocar o ![nome da figura](caminho da figura)
+![Logo do R](http://developer.r-project.org/Logo/Rlogo-5.png)
+
+Junto com vocês também estou pegando uma figura de flor de lotus
+
+![flor](https://imagens-revista.vivadecora.com.br/uploads/2018/09/Flor-de-l%C3%B3tus-cor-de-rosa.jpg)          
+
+
+![bleah](C:/Users/jessi/Documents/Impacta Treinamentos/Turma 2/bleach.jpg)
